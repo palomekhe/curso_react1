@@ -1,0 +1,36 @@
+#root {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column;
+}
+.content-wrap {
+  flex: 1; 
+}
+
+
+
+.footer {
+  background-color: #292323ff;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.footer p {
+  margin: 0;
+}

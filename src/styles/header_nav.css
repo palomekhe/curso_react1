@@ -1,0 +1,44 @@
+.main-header {
+  display: flex; 
+  align-items: center; 
+  padding: 10px 40px; 
+  background-color: #e3e3e3; 
+  border-bottom: 1px solid #ddd;
+}
+
+.header-left,
+.header-center {
+  flex: 1; 
+}
+
+
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* 2. Columna Central: Alinear la navegación al centro */
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+nav ul li a:hover {
+  color: #1996d4;
+}

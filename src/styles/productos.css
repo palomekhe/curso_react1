@@ -1,0 +1,129 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    justify-content: center;
+    padding: 20px;
+}
+
+.titulo{
+    color: #565f64;
+}
+
+.product-card {
+    color: #565f64;
+    border: 1px solid #E3E3E3;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+}
+
+.product-card:hover {
+    background-color: #E3E3E3;
+}
+
+.product-card img {
+    max-width: 100%; 
+    height: 150px; 
+    object-fit: contain; 
+    margin-bottom: 10px;
+}
+
+
+.product-info {
+    flex-grow: 1; 
+    margin: 10px 0; 
+}
+
+
+.product-price {
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin-top: 8px; 
+}
+
+
+.product-card h4 {
+    color: #565f64;
+    font-weight: normal;
+    font-size: 1rem;
+    min-height: 40px; 
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 0px; 
+  align-items: center; 
+  width: 100%; 
+  margin-top: auto; 
+}
+
+.BotonIcono {
+  flex: 1; 
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #E3E3E3;
+  color: #565f64;
+  transition: all 1s ease;
+  display: grid; 
+  place-items: center;
+}
+
+
+.BotonVerMas {
+  flex: 2; 
+  padding: 8px;
+  border-radius: 15px;
+  background-color: #1996d4;
+  color: #E3E3E3;
+  text-decoration: none;
+  text-align: center; 
+}
+
+.product-card:hover .BotonIcono{
+    background-color: #565f64;
+    color: #E3E3E3
+}
+
+
+
+@media (max-width: 1023px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card h3 { /* Suponiendo que el título es un h3 */
+        font-size: 1rem; /* Achicamos un poco la fuente del título */
+    }
+
+    .product-card p { /* Suponiendo que hay un párrafo de descripción */
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles muy chicos */
+    }
+}

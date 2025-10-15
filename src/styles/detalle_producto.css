@@ -1,0 +1,123 @@
+/* --- Estilos Generales del Contenedor --- */
+.product-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 40px auto; 
+  display: flex;
+  flex-direction: column; 
+  gap: 30px; 
+}
+
+
+.product-image-section {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3e3e3;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.product-image-section img {
+  max-width: 100%;
+  height: auto;
+  max-height: 450px; 
+  object-fit: contain;
+}
+
+
+.product-info-section {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-category {
+  text-transform: uppercase;
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 2.5rem; 
+  margin: 0;
+  line-height: 1.2;
+  color:#565f64;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1996d4; 
+  margin: 20px 0;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #565f64;
+}
+
+/* --- Sección de Acciones (Cantidad y Botón) --- */
+.product-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column; /* Apilado en móviles */
+  gap: 20px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-selector input {
+  width: 60px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.add-to-cart-btn {
+  background-color: #1996d4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #147ab2;
+}
+
+/* --- LA MAGIA DEL RESPONSIVE --- */
+/* Estilos para Tablets y Desktops (pantallas más grandes que 768px) */
+@media (min-width: 768px) {
+  .product-detail-container {
+    flex-direction: row; /* Columnas una al lado de la otra */
+    gap: 50px;
+  }
+  
+  .product-actions {
+    flex-direction: row; /* Botones uno al lado del otro */
+    align-items: center;
+  }
+
+  .product-title {
+    font-size: 3rem;
+  }
+}

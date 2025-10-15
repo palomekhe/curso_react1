@@ -1,0 +1,86 @@
+/* --- Estructura General de la Página --- */
+.ofertas-page {
+  width: 100%;
+}
+
+/* --- Banner Principal --- */
+.ofertas-banner {
+  background-color: #1996d4; /* AZUL para el impacto */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* --- Sección Ofertas Flash --- */
+.ofertas-flash {
+  background-color: #e3e3e3; /* GRIS CLARO de fondo */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ofertas-flash h2 {
+  color: #565f64; /* GRIS OSCURO para el título */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.countdown-timer div {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #565f64;
+}
+
+.countdown-timer span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1996d4; /* AZUL para destacar los números */
+}
+
+/* --- Grilla de Productos --- */
+.ofertas-grid-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* --- Etiqueta de Descuento en la Tarjeta de Producto --- */
+/* (Añade esto al CSS de tu ProductCard) */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #1996d4; /* AZUL para la etiqueta */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* (Asegúrate de que el contenedor de la tarjeta tenga position: relative) */
+.product-card {
+  position: relative;
+  /* ... tus otros estilos ... */
+}
