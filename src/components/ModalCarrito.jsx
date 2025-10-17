@@ -7,13 +7,26 @@ export default function ModalCarrito({onClose, children}){
         }
     };
     return(
-    <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
-        {children}
-        <button className="close-button" onClick={onClose}>
-          Cerrar
-        </button>
-      </div>
-    </div>
+        <div className="modal-overlay" onClick={handleOverlayClick}>
+            <div className="modal-content">
+                
+                <div className="modal-header">
+                    <button className="close-icon-button" onClick={onClose}>
+                        &times; 
+                    </button>
+                </div>
+                
+                <div className="modal-body">
+                    {children} 
+                </div>
+                
+                <div className="modal-footer">
+                    <button className="close-button" onClick={onClose}>
+                        Cerrar
+                    </button>
+                </div>
+
+            </div>
+        </div>
     )
 }

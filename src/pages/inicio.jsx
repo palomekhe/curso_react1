@@ -7,7 +7,6 @@ function Inicio() {
     <>  
         <div>
             <ProductosApiPro />
-            <CarritoCompras/>
         </div>
     </>
   )

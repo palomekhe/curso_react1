@@ -19,7 +19,7 @@ export default function CarritoCompras() {
               <img src={producto.image} alt={producto.title} className="carrito-item-img"/>
               <div className="carrito-item-info">
                 <p>{producto.title}</p>
-                <p>{producto.price}</p>
+                <p>${producto.price}</p>
               </div>
               <IconButton className="item-delete-btn" onClick={()=> eliminarDelCarrito(indice)}>
                 <DeleteIcon className='BotonEliminar'/>

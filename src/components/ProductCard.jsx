@@ -2,8 +2,11 @@ import { ShoppingCartSharp } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import '../styles/productCard.css'
+import { CarritoContext } from '../context/CarritoContext';
+import { useContext } from "react";
 
 export default function ProductCard({producto}){
+    const {agregarCarrito} = useContext(CarritoContext);
     const tieneDesc = producto.discount && producto.discount > 0;
     const  precioFinal = tieneDesc 
     ? producto.price * (1 - producto.discount / 100)
@@ -15,10 +18,10 @@ export default function ProductCard({producto}){
                 {tieneDesc && (
                     <div className="discount-badge">{producto.discount}% OFF</div>
                 )}
-                <img className="imagen-producto" src={producto.foto} alt={producto.product} />
+                <img className="imagen-producto" src={producto.image} alt={producto.product} />
 
                 <div className="info-producto">
-                    <h4>{producto.product}</h4>
+                    <h4>{producto.title}</h4>
                     <div className="container-precio-producto">
                         {
                             tieneDesc && (
@@ -29,7 +32,7 @@ export default function ProductCard({producto}){
                 </div>
 
                 <div className="accion-producto">
-                    <IconButton>
+                    <IconButton onClick={() => agregarCarrito(producto)}>
                         <ShoppingCartSharp className="BotonIcono"/>
                     </IconButton>
                     <Link className="BotonVerMas" to={`/productos/${producto.id}`}>Ver Más</Link>

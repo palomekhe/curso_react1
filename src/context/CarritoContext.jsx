@@ -4,6 +4,7 @@ export const CarritoContext = createContext();
 
 export default function CarritoProvider({children}){
     const [carrito, setCarrito] = useState([]);
+    
     function agregarCarrito(producto){
         setCarrito((prev) => [... prev, producto] );
     }
