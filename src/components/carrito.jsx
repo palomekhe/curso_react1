@@ -2,8 +2,11 @@ import React from 'react';
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'; 
 import "../styles/carrito.css"
+import { CarritoContext } from '../context/CarritoContext';
+import { useContext } from 'react';
 
-export default function CarritoCompras({ carrito, productosEliminados }) {
+export default function CarritoCompras() {
+  const { carrito, vaciarCarrito, eliminarDelCarrito} = useContext(CarritoContext);
   const total = carrito.reduce((sum, producto) => sum + producto.price, 0);
   return (
     <div>
@@ -18,14 +21,14 @@ export default function CarritoCompras({ carrito, productosEliminados }) {
                 <p>{producto.title}</p>
                 <p>{producto.price}</p>
               </div>
-              <IconButton className="item-delete-btn" onClick={()=> productosEliminados(indice)}>
+              <IconButton className="item-delete-btn" onClick={()=> eliminarDelCarrito(indice)}>
                 <DeleteIcon className='BotonEliminar'/>
               </IconButton>
             </li>
           ))}
         </ul>
       </div>
-        <div className="carrito-total">
+      <div className="carrito-total">
           {total > 0 && (
             <>
               <h3>Total: ${total.toFixed(2)}</h3> 

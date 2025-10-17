@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import '../styles/productos.css'
 import { ShoppingCartSharp } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import { CarritoContext } from '../context/CarritoContext';
+import { useContext } from "react";
 
 
 export default function ProductosApiPro({agregarProducto}){
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState();
+    const {agregarCarrito} = useContext(CarritoContext);
 
     const truncateTexto = (texto, maxLength) => {
         if (texto.length > maxLength) {
@@ -47,7 +49,7 @@ export default function ProductosApiPro({agregarProducto}){
                             <p className="product-price">${Number(producto.price)}</p>
                         </div>
                         <div className="product-card-actions">
-                            <IconButton  onClick={() => agregarProducto(producto)}>
+                            <IconButton  onClick={() => agregarCarrito(producto)}>
                                 <ShoppingCartSharp className="BotonIcono"/>
                             </IconButton>
                             <Link className="BotonVerMas" to={`/productos/${producto.id}`} >Ver Más</Link>
