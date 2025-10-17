@@ -1,11 +1,15 @@
-/* --- ESTILOS PARA DESKTOP (pantallas grandes) --- */
+
 .main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100; 
+  width: 100%; 
   display: flex;
   align-items: center;
   padding: 10px 40px;
   background-color: #e3e3e3;
   border-bottom: 1px solid #ddd;
-  position: relative; /* Contexto para el z-index */
+  box-sizing: border-box; 
 }
 
 .header-left, .header-center, .header-right {
