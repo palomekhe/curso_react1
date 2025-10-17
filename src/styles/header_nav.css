@@ -14,8 +14,12 @@
 
 .header-left { display: flex; justify-content: flex-start; }
 .header-center { display: flex; justify-content: center; }
-.header-right { display: flex; justify-content: flex-end; }
-
+.header-right { 
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 15px; 
+}
 .logo { height: 50px; }
 
 nav ul {
@@ -31,6 +35,7 @@ nav ul li a {
   color: #333;
   font-weight: bold;
 }
+
 
 .hamburger-menu {
   display: none;
