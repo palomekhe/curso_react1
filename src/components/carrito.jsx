@@ -6,8 +6,9 @@ import { CarritoContext } from '../context/CarritoContext';
 import { useContext } from 'react';
 
 export default function CarritoCompras() {
-  const { carrito, vaciarCarrito, eliminarDelCarrito} = useContext(CarritoContext);
-  const total = carrito.reduce((sum, producto) => sum + producto.price, 0);
+  const { carrito, vaciarCarrito, eliminarDelCarrito, calcularTotal} = useContext(CarritoContext);
+  const total = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+  
   return (
     <div>
       <hr />
@@ -16,10 +17,10 @@ export default function CarritoCompras() {
         <ul>
           {carrito.map((producto,indice) => (
             <li key={indice} className="carrito-item">
-              <img src={producto.image} alt={producto.title} className="carrito-item-img"/>
+              <img src={producto.image} alt={producto.nombre} className="carrito-item-img"/>
               <div className="carrito-item-info">
-                <p>{producto.title}</p>
-                <p>${producto.price}</p>
+                <p>{producto.nombre}</p>
+                <p>${ (producto.precioFinal).toLocaleString('es-AR') }</p>
               </div>
               <IconButton className="item-delete-btn" onClick={()=> eliminarDelCarrito(indice)}>
                 <DeleteIcon className='BotonEliminar'/>
@@ -31,11 +32,15 @@ export default function CarritoCompras() {
       <div className="carrito-total">
           {total > 0 && (
             <>
-              <h3>Total: ${total.toFixed(2)}</h3> 
+              <h3>Total: ${calcularTotal().toLocaleString('es-AR')}</h3> 
+              <div>
+                <IconButton onClick={ () => vaciarCarrito()}>
+                  <DeleteIcon className='BotonEliminar'/>
+                </IconButton>
+              </div>
             </>
           )}
       </div>
-
     </div>
   );
 }  

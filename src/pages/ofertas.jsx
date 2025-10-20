@@ -2,25 +2,28 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "../styles/ofertas.css"
 import ProductCard from "../components/ProductCard";
+import { supabase } from "../APIs/supabaseClient";
 
 export default function Ofertas() {
 
     const [productos, setProductos] = useState([]);
 
-    const ApiURL2 = 'https://68dea53dd7b591b4b790481a.mockapi.io/palomekhe/tendencias';
+
     useEffect( () => {
-        fetch(ApiURL2)
-            .then( (respuesta) => {
-                if(!respuesta.ok){
-                    throw new Error("Error de respuesta");
-                }
-                return respuesta.json();
-            })
-            .then( (datos) => {setProductos(datos)})
-            .catch( (error) => {
+        async function obtenerProductosEnOferta() {
+            try{
+                const {data , error} = await supabase
+                .from('productos')
+                .select('*')
+                .eq('en_oferta', true);
+                if(error) throw error;
+                setProductos(data || []);
+            } catch (error){
                 console.error("Se produjo un error al traer los datos", error);
-            })
-    },[])
+            }
+        }
+        obtenerProductosEnOferta();
+    },[]);
 
     return (
         <div className="ofertas-page">
@@ -40,9 +43,13 @@ export default function Ofertas() {
 
             <main className="ofertas-grid-container">
                 <div className="product-grid">
-                    {productos.map(productos => (
-                        <ProductCard key={productos.id} producto={productos}/>
-                    ))}
+                    {productos.length > 0 ? (
+                        productos.map((producto) => (
+                        <ProductCard key={producto.id} producto={producto} />
+                        ))
+                    ) : (
+                        <p>No hay productos disponibles por el momento.</p>
+                    )}
                 </div>
             </main>
         </div>

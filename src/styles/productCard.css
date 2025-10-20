@@ -16,7 +16,7 @@
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -71,9 +71,10 @@
 }
 
 .precio-final {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #1996d4; 
+    margin-top: 8px; 
 }
 
 .accion-producto {

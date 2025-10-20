@@ -9,8 +9,8 @@ export default function ProductCard({producto}){
     const {agregarCarrito} = useContext(CarritoContext);
     const tieneDesc = producto.discount && producto.discount > 0;
     const  precioFinal = tieneDesc 
-    ? producto.price * (1 - producto.discount / 100)
-    : producto.price;
+    ? producto.precio * (1 - producto.discount / 100)
+    : producto.precio;
 
     return(
         <>
@@ -18,16 +18,16 @@ export default function ProductCard({producto}){
                 {tieneDesc && (
                     <div className="discount-badge">{producto.discount}% OFF</div>
                 )}
-                <img className="imagen-producto" src={producto.image} alt={producto.product} />
+                <img className="imagen-producto" src={producto.image} alt={producto.nombre} />
 
                 <div className="info-producto">
-                    <h4>{producto.title}</h4>
+                    <h4>{producto.nombre}</h4>
                     <div className="container-precio-producto">
                         {
                             tieneDesc && (
-                                <span className="precio-original">${Number(producto.price).toFixed(2)}</span>
+                                <span className="precio-original">${Number(producto.precio).toLocaleString('es-AR')}</span>
                             )}
-                        <span className="precio-final">${Number(precioFinal).toFixed(2)}</span>
+                        <span className="precio-final">${Number(precioFinal).toLocaleString('es-AR')}</span>
                     </div>
                 </div>
 

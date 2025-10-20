@@ -43,7 +43,7 @@
 .product-price {
     font-size: 1.2rem; 
     font-weight: bold; 
-    color: #333; 
+    color: #1996d4; 
     margin-top: 8px; 
 }
 
@@ -94,7 +94,7 @@
 
 @media (max-width: 1023px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         padding: 15px;
     }
@@ -103,7 +103,7 @@
 
 @media (max-width: 767px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
         padding: 10px;
     }
@@ -112,11 +112,11 @@
         padding: 10px;
     }
 
-    .product-card h3 { /* Suponiendo que el título es un h3 */
-        font-size: 1rem; /* Achicamos un poco la fuente del título */
+    .product-card h3 { 
+        font-size: 1rem; 
     }
 
-    .product-card p { /* Suponiendo que hay un párrafo de descripción */
+    .product-card p {
         font-size: 0.8rem;
     }
 }
@@ -124,6 +124,6 @@
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: 1fr; /* 1 columna en móviles muy chicos */
+        grid-template-columns: 1fr; 
     }
 }
