@@ -19,15 +19,17 @@ export default function ProductoDetalle(){
       .select(`
         *,
         categoria:categoria_id (id, nombre)
-      `)
-      .eq('id',id)
-      .single();
-      if(!error) setProducto(data);
-    }
-    obtenerProducto();
-  },[id]);
-  
-  if(!producto) return <p>Cargando...</p>
+        `)
+        .eq('id',id)
+        .single();
+        if(!error) setProducto(data);
+      }
+      obtenerProducto();
+    },[id]);
+    
+    if(!producto) return <p>Cargando...</p>
+    const descuento = producto.discount || 0;
+    const precioFinal = producto.precio * (1 - descuento / 100);
 
   return (
     <div className="product-detail-container">
@@ -40,7 +42,13 @@ export default function ProductoDetalle(){
       <div className="product-info-section">
         <p className="product-category">categoría: {producto.categoria?.nombre}</p>
         <h1 className="product-title">{producto.nombre}</h1>
-        <p className="product-price">${Number(producto.precio).toLocaleString('es-AR')}</p>
+        <div className="container-precio-producto">
+          {
+              descuento && (
+              <span className="precio-original">${Number(producto.precio).toLocaleString('es-AR')}</span>
+          )}
+            <span className="product-price">${Number(precioFinal).toLocaleString('es-AR')}</span>
+        </div>
         <p className="product-description">{producto.descripcion}</p>
         
 
