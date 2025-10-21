@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import '../styles/productCard.css'
 import { CarritoContext } from '../context/CarritoContext';
 import { useContext } from "react";
+import AlertaProductoAgregadoCarrito from "./AlertaAgregarCarrito";
 
 export default function ProductCard({producto}){
     const {agregarCarrito} = useContext(CarritoContext);
@@ -32,7 +33,9 @@ export default function ProductCard({producto}){
                 </div>
 
                 <div className="accion-producto">
-                    <IconButton onClick={() => agregarCarrito(producto)}>
+                    <IconButton onClick={() => {
+                        agregarCarrito(producto);
+                    }}>
                         <ShoppingCartSharp className="BotonIcono"/>
                     </IconButton>
                     <Link className="BotonVerMas" to={`/productos/${producto.id}`}>Ver Más</Link>

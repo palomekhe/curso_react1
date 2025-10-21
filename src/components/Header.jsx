@@ -9,11 +9,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "../styles/header_nav.css";
 import ModalCarrito from './ModalCarrito';
 import CarritoCompras from './carrito';
+import { CarritoContext } from "../context/CarritoContext";
+import { useContext } from "react";
+import { Badge } from '@mui/material';
 
 export default function Header() {
     // 2. El estado para controlar el menú ahora vive aquí
     const [menuAbierto, setMenuAbierto] = useState(false);
     const [modalCarrito, setModalCarrito] = useState(false);
+    const {CalcularTotalDeItems} = useContext(CarritoContext);
+    const totalItems = CalcularTotalDeItems();
+
+
 
     return (
         <header className="main-header">
@@ -30,7 +37,9 @@ export default function Header() {
 
             <div className="header-right">
                 <IconButton onClick={() => setModalCarrito(true)} aria-label="Ver carrito de compras" className="cart-icon-btn">
-                    <ShoppingCartIcon />
+                    <Badge badgeContent={totalItems} color='error'>
+                        <ShoppingCartIcon />
+                    </Badge>
                 </IconButton>
                 <button className="hamburger-menu" onClick={() => setMenuAbierto(!menuAbierto)}>
                     {menuAbierto ? <CloseIcon /> : <MenuIcon />}

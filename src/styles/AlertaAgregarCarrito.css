@@ -1,0 +1,36 @@
+.alerta-carrito{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background-color: springgreen;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeInOut 2.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

@@ -1,6 +1,9 @@
 import '../styles/Modal.css'
+import { CarritoContext } from "../context/CarritoContext";
+import { useContext } from "react";
 
 export default function ModalCarrito({onClose, children}){
+    const {carrito} = useContext(CarritoContext);
     const handleOverlayClick = (e) => {
         if (e.target.className === 'modal-overlay') {
             onClose();
@@ -21,9 +24,10 @@ export default function ModalCarrito({onClose, children}){
                 </div>
                 
                 <div className="modal-footer">
-                    <button className="close-button" onClick={onClose}>
-                        Cerrar
-                    </button>
+                    {carrito.length !== 0 &&
+                    (<button className="close-button" onClick={onClose}>
+                        Finalizar Compra
+                    </button>)}
                 </div>
 
             </div>

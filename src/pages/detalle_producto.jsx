@@ -57,7 +57,9 @@ export default function ProductoDetalle(){
             <label style={{color:"#000"}} htmlFor="quantity">Cantidad:</label>
             <input type="number" id="quantity" name="quantity" min="1" defaultValue="1" />
           </div>
-          <button className="add-to-cart-btn" onClick={()=> agregarCarrito(producto)}>
+          <button className="add-to-cart-btn" onClick={()=> {
+            agregarCarrito(producto);
+          }}>
             <ShoppingCartSharp fontSize="small" />
             Agregar al Carrito
           </button>
