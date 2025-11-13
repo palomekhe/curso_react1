@@ -12,7 +12,7 @@ export default function Nav({ menuAbierto, setMenuAbierto }) {
         <nav className={`header-center ${menuAbierto ? 'mobile-nav-open' : ''}`}>
             <ul>
                 <li><Link to="/" onClick={handleLinkClick}>Inicio</Link></li>
-                <li><Link to="/tendencias" onClick={handleLinkClick}>Tendencias</Link></li>
+                <li><Link to="/nosotros" onClick={handleLinkClick}>Nosotros</Link></li>
                 <li><Link to="/ofertas" onClick={handleLinkClick}>Ofertas</Link></li>
             </ul>
         </nav>
