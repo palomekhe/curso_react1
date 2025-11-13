@@ -1,7 +1,7 @@
 export default function Nosotros(){
     return(
         <>
-        <div>
+        <div style={{color: "black"}}>
             
     <strong>Privacy Policy</strong><p>This privacy policy applies to the Palomeque´s Catering app (hereby referred to as "Application") for mobile devices that was created by Palomeque´s Catering (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".</p><strong>Information Collection and Use</strong><p>The Application collects information when you download and use it. This information may include information such as </p><ul><li>Your device's Internet Protocol address (e.g. IP address)</li><li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li><li>The time spent on the Application</li><li>The operating system you use on your mobile device</li></ul><p></p><p>The Application does not gather precise information about the location of your mobile device.</p>
             <div>
